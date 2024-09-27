@@ -1,0 +1,46 @@
+{
+  "name": "extension-hybrid-renderer",
+  "version": "1.1.1",
+  "description": "A generalized Markdown/Gemini/ETC content renderer for Hybrid. Replaces the old Markdown/Gemini renderers",
+  "private": true,
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1",
+    "lint": "standard --fix",
+    "build-markdown": "browserify ./markdown.js > bundle-markdown.js",
+    "build-json": "browserify ./json.js > bundle-json.js",
+    "build-gemini": "browserify ./gemini.js > bundle-gemini.js",
+    "build-ssb": "browserify ./ssb.js > bundle-ssb.js",
+    "build-reader": "browserify ./reader.js > bundle-reader.js",
+    "build": "npm run build-markdown && npm run build-json && npm run build-gemini && npm run build-ssb && npm run build-reader"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/HybridWare/extension-hybrid-renderer.git"
+  },
+  "author": "HybridWare <contact@hybridware.app>",
+  "license": "AGPL-3.0",
+  "bugs": {
+    "url": "https://github.com/HybridWare/extension-hybrid-renderer/issues"
+  },
+  "homepage": "https://github.com/HybridWare/extension-hybrid-renderer#readme",
+  "devDependencies": {
+    "browserify": "^17.0.0",
+    "standard": "^17.0.0"
+  },
+  "dependencies": {
+    "@mozilla/readability": "^0.4.4",
+    "escape-html": "^1.0.3",
+    "gemini-to-html": "^2.2.0",
+    "html-to-text": "^8.2.0",
+    "marked": "^4.0.16",
+    "ssb-fetch": "^1.5.2",
+    "ssb-markdown": "^6.0.7",
+    "ssb-ref": "^2.16.0",
+    "ssb-uri2": "^1.8.1"
+  },
+  "standard": {
+    "ignore": [
+      "bundle-*.js"
+    ]
+  }
+}
